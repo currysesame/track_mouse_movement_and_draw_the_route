@@ -5,17 +5,17 @@ import copy
 # read position and gyro
 
 def draw_line_forward(blank_image0, x1, y1, x2, y2):
-	cv2.line(blank_image0, (x1, y1), (x2, y2), (255, 0, 0), thickness=line_thickness)
+	cv2.line(blank_image0, (x1, y1), (x2, y2), (0, 210, 255), thickness=line_thickness)
 	
 def draw_line_backward(blank_image0, x1, y1, x2, y2):
-	cv2.line(blank_image0, (x1, y1), (x2, y2), (80, 80, 80), thickness=line_thickness)
+	cv2.line(blank_image0, (x1, y1), (x2, y2), (255, 0, 0), thickness=line_thickness)
 
 
 file = 'mouse_move.txt'
 height = 300
 width = 300
 blank_image = np.zeros((height,width,3), np.uint8)
-blank_image += 128
+blank_image += 220
 center_posi_x = 150
 center_posi_y = 150
 line_thickness = 3
@@ -26,7 +26,7 @@ diff_set_y = []
 
 # Define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-fps = 25.0
+fps = 12.0
 out = cv2.VideoWriter('output.avi',fourcc, fps, (width, height))
 
 with open(file, 'r') as f:
